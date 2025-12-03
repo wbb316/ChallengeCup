@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区互助 - 智慧社区</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="community-help.css">
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">HENU</span>
+            <span class="logo-text">智慧社区</span>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="community-property.html">社区物业</a></li>
+                <li><a href="#" class="active">社区互助</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="user-actions auth-buttons hide-auth">
+            <a href="login.html" class="login-btn">登录</a>
+            <a href="register.html" class="register-btn">注册</a>
+        </div>
+        <!-- 添加占位元素 -->
+        <div class="auth-placeholder"></div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="help-container">
+        <div class="section-title">
+            <h2>社区互助平台</h2>
+            <p>共享资源，互助邻里，共建和谐社区</p>
+        </div>
+
+        <div class="help-grid">
+            <!-- 左侧：闲置资源共享 -->
+            <section class="help-section resource-sharing">
+                <div class="section-header">
+                    <h3>闲置资源共享</h3>
+                    <div class="tab-controls">
+                        <button class="tab-btn active" data-tab="second-hand">二手平台</button>
+                        <button class="tab-btn" data-tab="exchange">以物换物</button>
+                    </div>
+                </div>
+
+                <!-- 二手平台内容 -->
+                <div class="tab-content active" id="second-hand">
+                    <div class="action-buttons">
+                        <button id="addSecondHand" class="btn btn-primary">发布闲置</button>
+                    </div>
+
+                    <!-- 搜索栏 -->
+                    <div class="search-bar">
+                        <input type="text" placeholder="搜索闲置物品..." id="searchSecondHand">
+                        <button class="search-btn">🔍</button>
+                    </div>
+
+                    <!-- 物品列表 -->
+                    <div class="items-list" id="secondHandList">
+                        <!-- 物品项1 -->
+                        <div class="item-card">
+                            <div class="item-image">📚</div>
+                            <div class="item-info">
+                                <h4>九成新考研复习资料</h4>
+                                <p>包含数学、英语全套复习资料，去年考研使用，保存完好</p>
+                                <div class="item-meta">
+                                    <span class="item-owner">李先生 (2栋)</span>
+                                    <span class="item-status">可售</span>
+                                </div>
+                            </div>
+                            <div class="item-action">
+                                <button class="btn add-to-cart" data-id="1">加入购物车</button>
+                            </div>
+                        </div>
+
+                        <!-- 物品项2 -->
+                        <div class="item-card">
+                            <div class="item-image">🖥️</div>
+                            <div class="item-info">
+                                <h4>笔记本电脑</h4>
+                                <p>联想笔记本，使用3年，配置中等，适合办公学习</p>
+                                <div class="item-meta">
+                                    <span class="item-owner">王女士 (5栋)</span>
+                                    <span class="item-status">可售</span>
+                                </div>
+                            </div>
+                            <div class="item-action">
+                                <button class="btn add-to-cart" data-id="2">加入购物车</button>
+                            </div>
+                        </div>
+
+                        <!-- 物品项3 -->
+                        <div class="item-card">
+                            <div class="item-image">🧸</div>
+                            <div class="item-info">
+                                <h4>儿童玩具套装</h4>
+                                <p>适合3-6岁儿童，多种玩具组合，孩子长大了用不上了</p>
+                                <div class="item-meta">
+                                    <span class="item-owner">张女士 (1栋)</span>
+                                    <span class="item-status">可售</span>
+                                </div>
+                            </div>
+                            <div class="item-action">
+                                <button class="btn add-to-cart" data-id="3">加入购物车</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 购物车区域 -->
+                    <div class="cart-section">
+                        <h4>我的购物车 (<span id="cartCount">0</span>)</h4>
+                        <div id="cartItems" class="cart-items">
+                            <p class="empty-cart">购物车为空</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 以物换物内容 -->
+                <div class="tab-content" id="exchange">
+                    <div class="action-buttons">
+                        <button id="addExchangeItem" class="btn btn-primary">发布交换物品</button>
+                    </div>
+
+                    <!-- 交换物品列表 -->
+                    <div class="exchange-list" id="exchangeList">
+                        <!-- 交换物品1 -->
+                        <div class="exchange-card">
+                            <div class="exchange-item">
+                                <div class="item-image">🍳</div>
+                                <div class="item-info">
+                                    <h4>家用平底锅</h4>
+                                    <p>不粘锅，直径28cm，使用半年</p>
+                                    <span class="item-owner">赵先生 (3栋)</span>
+                                </div>
+                            </div>
+
+                            <div class="exchange-icon">↔️</div>
+
+                            <div class="exchange-want">
+                                <h5>期望交换：</h5>
+                                <p>小型烤箱或微波炉</p>
+                            </div>
+
+                            <div class="exchange-action">
+                                <button class="btn btn-primary" data-id="101">联系交换</button>
+                            </div>
+                        </div>
+
+                        <!-- 交换物品2 -->
+                        <div class="exchange-card">
+                            <div class="exchange-item">
+                                <div class="item-image">📖</div>
+                                <div class="item-info">
+                                    <h4>文学类书籍一批</h4>
+                                    <p>包括小说、散文等约20本</p>
+                                    <span class="item-owner">陈女士 (6栋)</span>
+                                </div>
+                            </div>
+
+                            <div class="exchange-icon">↔️</div>
+
+                            <div class="exchange-want">
+                                <h5>期望交换：</h5>
+                                <p>儿童绘本或科普类书籍</p>
+                            </div>
+
+                            <div class="exchange-action">
+                                <button class="btn btn-primary" data-id="102">联系交换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 右侧：邻里帮扶 -->
+            <section class="help-section neighborhood-help">
+                <div class="section-header">
+                    <h3>邻里帮扶</h3>
+                    <button id="addHelpRequest" class="btn btn-primary">发布请求</button>
+                </div>
+
+                <!-- 帮扶请求列表 -->
+                <div class="requests-list" id="requestsList">
+                    <!-- 请求1 -->
+                    <div class="request-card">
+                        <div class="request-header">
+                            <h4>寻求家电维修帮助</h4>
+                            <span class="request-status pending">待接单</span>
+                        </div>
+                        <div class="request-content">
+                            <p>家里的洗衣机不脱水了，希望有会维修的邻居帮忙看看，有小费感谢</p>
+                            <div class="request-meta">
+                                <span class="request-owner">刘先生 (4栋)</span>
+                                <span class="request-tip">小费：50元</span>
+                                <span class="request-time">2小时前</span>
+                            </div>
+                        </div>
+                        <div class="request-action">
+                            <button class="btn take-order" data-id="201">接单帮助</button>
+                        </div>
+                    </div>
+
+                    <!-- 请求2 -->
+                    <div class="request-card">
+                        <div class="request-header">
+                            <h4>需要帮忙照顾宠物</h4>
+                            <span class="request-status pending">待接单</span>
+                        </div>
+                        <div class="request-content">
+                            <p>出差3天，需要帮忙照顾一下我的猫，每天喂食换水即可，有小费</p>
+                            <div class="request-meta">
+                                <span class="request-owner">孙女士 (2栋)</span>
+                                <span class="request-tip">小费：100元</span>
+                                <span class="request-time">5小时前</span>
+                            </div>
+                        </div>
+                        <div class="request-action">
+                            <button class="btn take-order" data-id="202">接单帮助</button>
+                        </div>
+                    </div>
+
+                    <!-- 请求3（已接单） -->
+                    <div class="request-card">
+                        <div class="request-header">
+                            <h4>搬家需要帮手</h4>
+                            <span class="request-status taken">已接单</span>
+                        </div>
+                        <div class="request-content">
+                            <p>周末搬家，需要2-3人帮忙搬运一些家具和箱子，包午饭</p>
+                            <div class="request-meta">
+                                <span class="request-owner">周先生 (7栋)</span>
+                                <span class="request-tip">小费：200元</span>
+                                <span class="request-time">昨天</span>
+                            </div>
+                            <div class="request-taker">
+                                <span>接单者：张先生 (3栋)</span>
+                            </div>
+                        </div>
+                        <div class="request-action">
+                            <button class="btn disabled" disabled>已有人接单</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2025 HENU智慧社区管理系统 版权所有</p>
+    </footer>
+
+    <script src="community-help.js"></script>
+</body>
+
+</html>

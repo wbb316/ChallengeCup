@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.challengecup.mapper.ShoppingMapper">
+    <insert id="insert">
+        insert into products (name, description, current_price, original_price, category, create_time, update_time,image)
+        values (#{name},#{description},#{currentPrice},#{originalPrice},#{category},#{createTime},#{updateTime},#{image})
+    </insert>
+
+    <update id="update">
+        update products
+        <set>
+            <if test="description != null">
+                description=#{description},
+            </if>
+            <if test="currentPrice != null">
+                current_price=#{currentPrice},
+            </if>
+            <if test="originalPrice != null">
+                original_price=#{originalPrice},
+            </if>
+            <if test="category != null">
+                category=#{category},
+            </if>
+            <if test="updateTime != null">
+                update_time=#{updateTime},
+            </if>
+            <if test="image != null">
+                image=#{image}
+            </if>
+        </set>
+        where name=#{name}
+    </update>
+</mapper>

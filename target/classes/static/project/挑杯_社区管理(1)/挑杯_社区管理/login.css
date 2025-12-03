@@ -1,0 +1,258 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 背景样式 - 替换为本地图片 */
+body {
+    /* 替换为你本地图片的路径，如 ./your-image.jpg */
+    background-image: url('Web管理系统首页素材.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 若图片不够清晰，可添加半透明遮罩层 */
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(247, 248, 250, 0.85); /* 白色半透明遮罩，增强可读性 */
+    z-index: -1;
+}
+
+/* 登录容器 */
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* 登录卡片 */
+.login-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px 30px;
+    width: 100%;
+}
+
+/* 品牌标识 */
+.brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.cloud-icon {
+    background-color: #e63946;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e63946;
+}
+
+.language-selector select {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* 登录标题 */
+.login-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.login-title h1 {
+    font-size: 24px;
+    color: #1d3557;
+    margin-bottom: 8px;
+}
+
+.login-title p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* 表单样式 */
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 14px 14px 44px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4dabf7;
+    box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
+}
+
+.form-group input::placeholder {
+    color: #a0aec0;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 表单选项 */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* 调整间距，为注册按钮预留空间 */
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: #4a5568;
+    cursor: pointer;
+}
+
+.remember-me input {
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+    accent-color: #4dabf7;
+}
+
+.forgot-password {
+    color: #4dabf7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* 按钮组（登录 + 注册） */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 登录按钮 */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #162a44;
+}
+
+.arrow {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.login-btn:hover .arrow {
+    transform: translateX(3px);
+}
+
+/* 注册账号按钮 */
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e63946;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #e63946;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #fbebeb;
+}
+
+/* 响应式调整 */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+    
+    .login-title h1 {
+        font-size: 22px;
+    }
+}

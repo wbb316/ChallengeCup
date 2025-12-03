@@ -1,0 +1,53 @@
+/* 密码强度提示样式 */
+.form-info {
+    margin: -10px 0 20px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* 密码强度指示器 */
+.password-strength {
+    display: flex;
+    height: 4px;
+    margin: 8px 0 15px;
+    gap: 4px;
+}
+
+.strength-bar {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+/* 错误提示样式 */
+.error-message {
+    color: #e63946;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.error input {
+    border-color: #e63946;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+/* 成功提示样式 */
+.success-message {
+    color: #48bb78;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-group.success input {
+    border-color: #48bb78;
+}
+
+.form-group.success .success-message {
+    display: block;
+}
