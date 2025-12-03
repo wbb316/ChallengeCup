@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区物业 - 智慧社区</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="community-property.css">
+</head>
+
+<body>
+<!-- 顶部导航栏 -->
+<header class="navbar">
+    <div class="logo">
+        <img src="../挑杯_社区管理/651dc0fc5d0d19585096fc1b59c298b8.png"
+             alt="系统图标"
+             class="logo-img">
+        <span class="logo-text">邻里智联</span>
+<!--        <button class="silver-mode-btn">银发模式</button>-->
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#" class="active">社区物业</a></li>
+            <li><a href="community-help.html">社区互助</a></li>
+            <li><a href="../../挑战杯网页_商超配送(3)/挑战杯网页_商超配送/index.html">商超配送</a></li>
+            <li><a href="../../挑战杯网页_在线问诊(2)/挑战杯网页_在线问诊/index.html">在线问诊</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="user-actions auth-buttons hide-auth">
+        <a href="login.html" class="login-btn">登录</a>
+        <a href="register.html" class="register-btn">注册</a>
+    </div>
+    <!-- 添加占位元素 -->
+    <div class="auth-placeholder"></div>
+</header>
+
+<!-- 主内容区 -->
+<main class="property-container">
+    <!-- 第一部分：公告区域 -->
+    <section class="announcement-section">
+        <div class="section-title">
+            <h2>公告</h2>
+        </div>
+
+        <div class="announcement-header">
+            <p>社区最新通知与公告</p>
+            <button id="addAnnouncement" class="btn btn-primary admin-only">发布新公告</button>
+        </div>
+
+        <div class="announcement-list" id="announcementList">
+            <!-- 公告项示例 -->
+            <div class="announcement-item">
+                <div class="announcement-title">
+                    <span>关于小区绿化改造的通知</span>
+                    <span class="announcement-date">2025-11-01</span>
+                </div>
+                <div class="announcement-content">
+                    为提升小区环境质量，将于11月10日起进行绿化改造工程，工期预计7天，期间可能会有噪音影响，敬请谅解。
+                </div>
+                <div class="admin-actions admin-only">
+                    <button class="btn btn-edit">编辑</button>
+                    <button class="btn btn-delete">删除</button>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <div class="announcement-title">
+                    <span>11月份物业费缴纳通知</span>
+                    <span class="announcement-date">2025-10-28</span>
+                </div>
+                <div class="announcement-content">
+                    11月份物业费缴纳通道已开启，可通过本平台"物业缴费"模块进行在线支付，缴费截止日期为11月15日。
+                </div>
+                <div class="admin-actions admin-only">
+                    <button class="btn btn-edit">编辑</button>
+                    <button class="btn btn-delete">删除</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二部分：我的社区我自治 -->
+    <section class="selfgov-section">
+        <div class="section-title">
+            <h2>我的社区我自治</h2>
+        </div>
+
+        <div class="selfgov-grid">
+            <!-- 左侧：居民交流 -->
+            <div class="selfgov-column">
+                <h3>居民交流</h3>
+                <div class="chat-area" id="residentChat">
+                    <div class="message-item">
+                        <div class="message-sender">张先生 (3栋2单元)</div>
+                        <div class="message-bubble">请问有人知道小区附近哪里有修鞋的吗？</div>
+                    </div>
+                    <div class="message-item">
+                        <div class="message-sender">李女士 (1栋1单元)</div>
+                        <div class="message-bubble">在西门出去右转50米有一家，开了很多年了</div>
+                    </div>
+                    <div class="message-item own">
+                        <div class="message-sender">我</div>
+                        <div class="message-bubble">谢谢，我下午去看看</div>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <textarea id="residentMessage" placeholder="输入您想交流的内容..."></textarea>
+                    <button class="btn btn-primary" id="sendResidentMsg">发送</button>
+                </div>
+            </div>
+
+            <!-- 右侧：对物业说 -->
+            <div class="selfgov-column">
+                <h3>对物业说</h3>
+                <div class="chat-area" id="propertyChat">
+                    <div class="message-item">
+                        <div class="message-sender">物业管理员</div>
+                        <div class="message-bubble">您好，请问有什么可以帮助您的？</div>
+                    </div>
+                    <div class="message-item own">
+                        <div class="message-sender">我</div>
+                        <div class="message-bubble">我们单元的电梯最近经常异响，麻烦安排人检查一下</div>
+                    </div>
+                    <div class="message-item">
+                        <div class="message-sender">物业管理员</div>
+                        <div class="message-bubble">收到，我们会在今天下午安排工程师傅检查</div>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <textarea id="propertyMessage" placeholder="输入您想对物业说的话..."></textarea>
+                    <button class="btn btn-primary" id="sendPropertyMsg">发送</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三部分：政策状态 -->
+    <section class="policy-section">
+        <div class="section-title">
+            <h2>政策状态</h2>
+        </div>
+
+        <div class="policy-list">
+            <div class="policy-card">
+                <div class="policy-title">小区停车管理新规</div>
+                <div class="policy-content">
+                    规范小区停车秩序，实施车位登记制度，优先保障业主停车需求
+                </div>
+                <span class="policy-status status-implemented">已实施</span>
+            </div>
+
+            <div class="policy-card">
+                <div class="policy-title">垃圾分类推广计划</div>
+                <div class="policy-content">
+                    逐步推行垃圾分类管理，设置分类垃圾桶，开展宣传教育活动
+                </div>
+                <span class="policy-status status-ongoing">进行中</span>
+            </div>
+
+            <div class="policy-card">
+                <div class="policy-title">公共设施维护方案</div>
+                <div class="policy-content">
+                    定期检查维护小区公共设施，包括健身器材、儿童游乐设施等
+                </div>
+                <span class="policy-status status-implemented">已实施</span>
+            </div>
+
+            <div class="policy-card">
+                <div class="policy-title">社区活动组织计划</div>
+                <div class="policy-content">
+                    每月组织一次社区文化活动，增强邻里交流，营造和谐社区氛围
+                </div>
+                <span class="policy-status status-ongoing">进行中</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <p>© 2025 HENU智慧社区管理系统 版权所有</p>
+</footer>
+
+<script src="community-property.js"></script>
+</body>
+
+</html>

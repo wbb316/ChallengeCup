@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧社区 - 注册</title>
+    <link rel="stylesheet" href="login.css"> <!-- 引入登录页公共样式 -->
+    <link rel="stylesheet" href="register.css"> <!-- 引入注册页特有样式 -->
+</head>
+<body>
+    <!-- 成功提示层 -->
+    <div class="overlay" id="overlay"></div>
+    <div class="success-message" id="successMessage">
+        注册成功！
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="brand">
+                <div class="logo">
+                    <span class="cloud-icon">☁</span>
+                    <span class="logo-text">智慧社区</span>
+                </div>
+                <div class="language-selector">
+                    <select id="language">
+                        <option value="zh-CN" selected>简体中文</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="login-title">
+                <h1>用户注册</h1>
+                <p>创建账号，开启智慧物联体验</p>
+            </div>
+            
+            <form id="registerForm" class="login-form">
+                <div class="form-section">
+                    <h3 class="form-section-title">账号信息</h3>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <span>👤</span>
+                        </div>
+                        <input type="text" id="username" placeholder="请输入用户名" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <span>🔒</span>
+                        </div>
+                        <input type="password" id="password" placeholder="请输入密码" required>
+                        <button type="button" class="toggle-password" id="togglePassword1">👁️</button>
+                    </div>
+                    <p class="password-hint">8-16位密码，必须包含数字与大小写字母</p>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <span>🔒</span>
+                        </div>
+                        <input type="password" id="confirmPassword" placeholder="请再次输入密码" required>
+                        <button type="button" class="toggle-password" id="togglePassword2">👁️</button>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3 class="form-section-title">用户信息</h3>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <span>🏠</span>
+                        </div>
+                        <input type="text" id="address" placeholder="请输入地址" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <span>🎭</span>
+                        </div>
+                        <select id="userRole" class="role-select" required>
+                            <option value="" disabled selected>请选择用户角色</option>
+                            <option value="resident">居民</option>
+                            <option value="property">物业工作人员</option>
+                            <option value="volunteer">志愿者</option>
+                            <!-- 扩展角色可直接添加option -->
+                            <!-- <option value="admin">管理员</option> -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="agreement">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">
+                        我已阅读并同意<a href="#">《用户服务条款》</a>和<a href="#">《隐私政策》</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="register-btn">注册账号</button>
+                
+                <div class="login-link">
+                    已有账号？<a href="login.html">直接登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+</html>

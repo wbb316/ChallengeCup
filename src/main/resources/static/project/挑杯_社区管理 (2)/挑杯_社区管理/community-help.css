@@ -1,0 +1,348 @@
+/* 社区互助页面专用样式 */
+.help-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 50px;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.help-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 25px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.section-header h3 {
+    font-size: 18px;
+    color: #202124;
+}
+
+/* 标签切换样式 */
+.tab-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-btn {
+    padding: 6px 15px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 按钮样式 */
+.btn {
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+}
+
+.btn:disabled, .btn.disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.action-buttons {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* 搜索栏样式 */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 物品列表样式 */
+.items-list, .exchange-list, .requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.item-card, .exchange-card, .request-card {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover, .exchange-card:hover, .request-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.item-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h4 {
+    margin-bottom: 5px;
+    color: #202124;
+}
+
+.item-info p {
+    font-size: 14px;
+    color: #5f6368;
+    margin-bottom: 8px;
+}
+
+.item-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #888;
+}
+
+.item-status {
+    color: #137333;
+    background-color: #e6f4ea;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.item-action {
+    flex-shrink: 0;
+}
+
+/* 以物换物样式 */
+.exchange-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.exchange-item {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.exchange-icon {
+    font-size: 20px;
+    color: #888;
+}
+
+.exchange-want {
+    flex: 1;
+}
+
+.exchange-want h5 {
+    margin-bottom: 5px;
+    color: #5f6368;
+}
+
+.exchange-action {
+    flex-shrink: 0;
+}
+
+/* 购物车样式 */
+.cart-section {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.cart-section h4 {
+    margin-bottom: 15px;
+    color: #202124;
+}
+
+.cart-items {
+    min-height: 100px;
+    border: 1px dashed #ddd;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.empty-cart {
+    color: #888;
+    text-align: center;
+    line-height: 70px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-remove {
+    color: #d93025;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 邻里帮扶样式 */
+.request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.request-header h4 {
+    color: #202124;
+}
+
+.request-status {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.request-status.pending {
+    background-color: #fff8e6;
+    color: #e6a600;
+}
+
+.request-status.taken {
+    background-color: #e6f4ea;
+    color: #137333;
+}
+
+.request-content p {
+    font-size: 14px;
+    color: #5f6368;
+    margin-bottom: 10px;
+}
+
+.request-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.request-tip {
+    color: #d93025;
+}
+
+.request-taker {
+    font-size: 13px;
+    color: #1a73e8;
+    padding-top: 5px;
+    border-top: 1px dashed #eee;
+}
+
+.request-action {
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .help-container {
+        padding: 20px 20px;
+    }
+
+    .item-card, .exchange-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-action, .exchange-action {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+}
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.challengecup.mapper.UserMapper">
+
+    <insert id="insertWithIssue">
+        insert into property_issues
+        (user_name, title, description, category, status,admin_response, responded_time, created_time, update_time)
+        values (#{userName},#{title},#{description},#{category},#{status},#{adminResponse},#{respondedTime},
+                #{createTime},#{updateTime})
+    </insert>
+
+    <insert id="insertWithGoods">
+        insert into share_goods(user_name, title, description, price,status,category, contact_way) values
+        (#{userName},#{title},#{description},#{price},#{status},#{category},#{contactWay})
+
+    </insert>
+
+    <insert id="register">
+        insert into users
+        (username, phone, password, role,address, created_time, updated_time)
+        values (#{username},#{phone},#{password},#{role},#{address},#{createTime},#{updateTime})
+    </insert>
+
+    <insert id="insertWithRequest">
+        insert into help_requests(poster_name, volunteer_name, title, description, type, status, create_time, update_time)
+        values (#{posterName},#{volunteerName},#{title},#{description},#{type},#{status},#{createTime},#{updateTime})
+    </insert>
+
+    <insert id="insertWithHospital">
+        insert into appointments
+        (name, appointment_datetime, detail, address, doctor, create_time, update_time) VALUES
+        (#{name},#{appointmentDatetime},#{detail},#{address},#{doctor},#{createTime},#{updateTime})
+    </insert>
+
+    <update id="update">
+        update help_requests
+        <set>
+            <if test="volunteerName != null">
+                volunteer_name=#{volunteerName},
+            </if>
+            <if test="title != null">
+                title=#{title},
+            </if>
+            <if test="description != null">
+                description=#{description},
+            </if>
+            <if test="type != null">
+                type=#{type},
+            </if>
+            <if test="status != null">
+                status=#{status},
+            </if>
+            <if test="updateTime != null">
+                update_time=#{updateTime}
+            </if>
+        </set>
+        where poster_name=#{posterName}
+    </update>
+
+    <update id="updateHospital">
+        update appointments
+        <set>
+            <if test="detail != null">
+                detail=#{detail},
+            </if>
+            <if test="appointmentDatetime != null">
+                appointment_datetime=#{appointmentDatetime}
+            </if>
+        </set>
+        where name=#{name}
+    </update>
+    <update id="updateNotice">
+        update owner
+        <set>
+            <if test="content != null">
+                content=#{content},
+            </if>
+            <if test="publishTime != null">
+                publish_time=#{publishTime},
+            </if>
+            <if test="publisher != null">
+                publisher=#{publisher},
+            </if>
+            <if test="phone != null">
+                phone=#{phone},
+            </if>
+            <if test="updateTime != null">
+                update_time=#{updateTime}
+            </if>
+        </set>
+        where title=#{title}
+    </update>
+</mapper>

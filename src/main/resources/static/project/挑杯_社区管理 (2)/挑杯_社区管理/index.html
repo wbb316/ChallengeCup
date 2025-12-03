@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧社区管理系统</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<!-- 顶部导航栏 -->
+<header class="navbar">
+    <div class="logo">
+        <img src="..\挑杯_社区管理\651dc0fc5d0d19585096fc1b59c298b8.png"
+             alt="系统图标"
+             class="logo-img">
+        <span class="logo-text">邻里智联</span>
+        <button class="silver-mode-btn">银发模式</button>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#" class="active">首页</a></li>
+            <li><a href="community-property.html" >社区物业</a></li>
+            <li><a href="community-help.html">社区互助</a></li>
+            <li><a href="../../挑战杯网页_商超配送(3)/挑战杯网页_商超配送/index.html">商超配送</a></li>
+            <li><a href="../../挑战杯网页_在线问诊(2)/挑战杯网页_在线问诊/index.html">在线问诊</a></li>
+        </ul>
+    </nav>
+
+    <div class="auth-placeholder"></div>
+</header>
+
+<!-- 主横幅 -->
+<section class="banner">
+    <div class="banner-content">
+        <h1>邻里智联</h1>
+        <p>——智解老旧社区“议事、沟通、服务”低效难题</p>
+        <button class="sos-button" id="sosBtn">SOS</button>
+    </div>
+</section>
+
+<!-- 功能模块区域 -->
+<section class="features">
+    <div class="section-title">
+        <h2>核心功能模块</h2>
+        <p>全方位覆盖社区管理与服务需求</p>
+    </div>
+
+    <!-- 新增语音导航按钮 -->
+    <div class="voice-nav-container">
+        <button class="voice-nav-btn">语音导航</button>
+    </div>
+
+    <div class="features-grid">
+        <!-- 模块1：社区物业 -->
+        <div class="feature-card hot">
+            <div class="feature-icon">🏢</div>
+            <h3>社区物业</h3>
+            <p>物业缴费、报修申请、投诉建议等业务在线办理，进度实时查询</p>
+            <a href="community-property.html" class="more-link">查看详情 →</a>
+        </div>
+
+        <!-- 模块2：商超配送 -->
+        <div class="feature-card">
+            <div class="feature-icon">🛒</div>
+            <h3>商超配送</h3>
+            <p>周边商超商品在线选购，社区内快速配送，新鲜食材及时送达</p>
+            <a href="community-help.html" class="more-link">查看详情 →</a>
+        </div>
+
+        <!-- 模块3：在线问诊 -->
+        <div class="feature-card hot">
+            <div class="feature-icon">🏥</div>
+            <h3>在线问诊</h3>
+            <p>专业医师在线咨询，健康问题及时解答，轻症复诊便捷处理</p>
+            <a href="../../挑战杯网页_在线问诊(2)/挑战杯网页_在线问诊/index.html" class="more-link">查看详情 →</a>
+        </div>
+
+        <!-- 模块4：社区互助 -->
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>社区互助</h3>
+            <p>邻里互助平台，技能共享，物品借用，共建和谐社区氛围</p>
+            <a href="community-help.html" class="more-link">查看详情 →</a>
+        </div>
+    </div>
+</section>
+
+<!-- 时政信息区域 -->
+<section class="news-section">
+    <div class="section-title">
+        <h2>社区动态与政策资讯</h2>
+        <p>及时了解社区通知与相关政策</p>
+    </div>
+
+    <div class="news-container">
+        <div class="news-list">
+            <div class="news-item">
+                <h3>关于开展2025年度社区绿化美化活动的通知</h3>
+                <p>为进一步提升社区环境品质，营造优美宜居的社区氛围，社区将于3月15日组织开展"绿化家园"志愿活动，现面向全体居民招募志愿者。活动内容包括植树、花卉种植、绿化区域清理等。有意参与者请于3月10日前到物业办公室报名。</p>
+                <span class="news-date">发布时间：2025-03-01</span>
+            </div>
+
+            <div class="news-item">
+                <h3>《智慧社区建设标准》新政策解读</h3>
+                <p>近日，住建部发布了新版《智慧社区建设标准》，对社区智能化设施配置、数据安全管理、便民服务系统建设等方面提出了新要求。我社区将按照新标准逐步升级改造安防系统、智能停车管理系统和便民服务平台，预计6月底前完成一期改造。</p>
+                <span class="news-date">发布时间：2025-02-26</span>
+            </div>
+
+            <div class="news-item">
+                <h3>社区老年活动中心新增服务项目通知</h3>
+                <p>为丰富社区老年人精神文化生活，社区老年活动中心将于3月起新增书法绘画班、智能手机应用培训、健康养生讲座等服务项目。所有项目均免费向社区60岁以上老人开放，需提前一周预约。具体课程安排可到活动中心咨询或查看社区公告栏。</p>
+                <span class="news-date">发布时间：2025-02-20</span>
+            </div>
+        </div>
+
+        <div class="news-more">
+            <a href="#" class="more-link">查看更多资讯 →</a>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <p>© 2025 HENU智慧社区管理系统 版权所有</p>
+</footer>
+
+<script src="index.js"></script>
+</body>
+
+</html>

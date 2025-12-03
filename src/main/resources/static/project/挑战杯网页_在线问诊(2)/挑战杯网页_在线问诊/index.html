@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧社区 - 在线问诊</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 顶部导航栏 -->
+<header class="navbar">
+    <div class="logo">
+        <img src="../挑战杯网页_在线问诊/img/651dc0fc5d0d19585096fc1b59c298b8.png"
+             alt="系统图标"
+             class="logo-img">
+        <span class="logo-text">邻里智联</span>
+<!--        <button class="silver-mode-btn">银发模式</button>-->
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="../../挑杯_社区管理%20(2)/挑杯_社区管理/index.html">首页</a></li>
+            <li><a href="../../挑杯_社区管理%20(2)/挑杯_社区管理/community-property.html">社区物业</a></li>
+            <li><a href="../../挑杯_社区管理%20(2)/挑杯_社区管理/community-help.html">社区互助</a></li>
+            <li><a href="../../挑战杯网页_商超配送(3)/挑战杯网页_商超配送/index.html">商超配送</a></li>
+            <li><a href="index.html" class="active">在线问诊</a></li>
+        </ul>
+    </nav>
+
+    <div class="user-actions">
+        <button class="login-btn">登录</button>
+        <button class="register-btn">注册</button>
+    </div>
+</header>
+
+<!-- 主横幅 -->
+<section class="hero">
+    <div class="container">
+        <h2>专业医疗咨询，随时随地</h2>
+        <p>结合AI智能诊断与社区医院资源，为您提供全面、便捷的在线医疗服务</p>
+        <button class="btn btn-primary" id="consult-btn">立即咨询</button>
+    </div>
+</section>
+
+<!-- AI智能问诊区域 -->
+<section class="services" id="ai-consultation">
+    <div class="container">
+        <div class="section-title">
+            <h2>AI智能问诊</h2>
+            <p>基于人工智能技术，为您提供7x24小时不间断的初步医疗咨询</p>
+        </div>
+        <div class="service-cards">
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>AI症状分析</h3>
+                <p>通过智能问答系统，分析您的症状并提供初步诊断建议</p>
+                <button class="btn btn-primary" id="ai-chat-btn">开始AI问诊</button>
+            </div>
+
+            <!-- 新增的线上预约卡片 -->
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>线上预约</h3>
+                <p>快速预约合作医院医生，选择合适的时间段进行线下就诊</p>
+                <button class="btn btn-primary" id="online-booking-btn">立即预约</button>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>健康评估</h3>
+                <p>基于您的健康数据和生活习惯，提供个性化的健康评估报告</p>
+                <button class="btn btn-outline" id="health-assessment-btn">了解详情</button>
+            </div>
+        </div>
+        <div class="ai-chat-container" id="ai-chat">
+            <div class="chat-header">
+                <div class="chat-avatar">AI</div>
+                <div>
+                    <h3>AI健康助手</h3>
+                    <p>在线为您解答健康问题</p>
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message ai-message">
+                    您好！我是AI健康助手，可以为您提供初步的医疗咨询。请描述您的症状或健康问题。
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="请输入您的问题...">
+                <button id="send-btn">发送</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 预约表单模态框 -->
+<div id="appointment-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>医院预约</h2>
+        <form id="appointment-form">
+            <div class="form-group">
+                <label for="patient-name">姓名 *</label>
+                <input type="text" id="patient-name" name="name" required placeholder="请输入您的姓名">
+            </div>
+            <div class="form-group">
+                <label for="illness-detail">病情描述 *</label>
+                <textarea id="illness-detail" name="detail" rows="4" required placeholder="请详细描述您的症状和病情"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="appointment-time">预约时间 *</label>
+                <input type="datetime-local" id="appointment-time" name="appointmentDatetime" required>
+            </div>
+            <div class="form-group">
+                <label for="patient-address">地址 *</label>
+                <input type="text" id="patient-address" name="address" required placeholder="请输入您的详细地址">
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" id="cancel-appointment">取消</button>
+                <button type="submit" class="btn btn-primary">提交预约</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 合作医院区域 -->
+<section class="services" id="hospitals">
+    <div class="container">
+        <div class="section-title">
+            <h2>合作社区医院</h2>
+            <p>与多家社区医院合作，为您提供线下诊疗服务和专业医生咨询</p>
+        </div>
+        <div class="hospitals-grid">
+            <div class="hospital-card">
+                <div class="hospital-image"></div>
+                <div class="hospital-info">
+                    <h3>第一社区医院</h3>
+                    <p>地址：XX市XX区XX路XX号</p>
+                    <p>电话：000-00000000</p>
+                    <div class="hospital-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.5分</span>
+                    </div>
+                    <button class="btn btn-primary">查看详情</button>
+                </div>
+            </div>
+            <div class="hospital-card">
+                <div class="hospital-image"></div>
+                <div class="hospital-info">
+                    <h3>第二社区医院</h3>
+                    <p>地址：XX市XX区XX路XX号</p>
+                    <p>电话：000-00000000</p>
+                    <div class="hospital-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.5分</span>
+                    </div>
+                    <button class="btn btn-primary">查看详情</button>
+                </div>
+            </div>
+            <div class="hospital-card">
+                <div class="hospital-image"></div>
+                <div class="hospital-info">
+                    <h3>第三社区医院</h3>
+                    <p>地址：XX市XX区XX路XX号</p>
+                    <p>电话：000-00000000</p>
+                    <div class="hospital-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.5分</span>
+                    </div>
+                    <button class="btn btn-primary">查看详情</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>健康在线</h3>
+                <p>为您便捷的在线医疗服务</p>
+            </div>
+            <div class="footer-column">
+                <h3>服务项目</h3>
+                <ul>
+                    <li><a href="#">AI智能问诊</a></li>
+                    <li><a href="#">社区医院预约</a></li>
+                    <li><a href="#">健康管理</a></li>
+                    <li><a href="#">用药指导</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>联系我们</h3>
+                <ul>
+                    <li><a href="#">客服热线：xxx-xxx-xxxx</a></li>
+                    <li><a href="#">邮箱：xxxxxxxxxxxxxx</a></li>
+                    <li><a href="#">地址：xxxxxxxxxxxxx</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>关注我们</h3>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">微博</a></li>
+                    <li><a href="#">抖音</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 智慧社区管理系统 版权所有 | HENU智慧社区</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

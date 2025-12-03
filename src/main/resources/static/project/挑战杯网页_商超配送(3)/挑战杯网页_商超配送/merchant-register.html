@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商家入驻 - 智慧社区</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="supermarket-style.css">
+    <style>
+        .register-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .step-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .step-nav::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background-color: #eee;
+            z-index: 1;
+        }
+        .step-item {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #eee;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .step-item.active {
+            background-color: #2c6ecb;
+            color: white;
+        }
+        .step-item.completed {
+            background-color: #52c41a;
+            color: white;
+        }
+        .step-label {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-actions {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-prev {
+            background-color: #f2f3f5;
+            border: none;
+            color: #333;
+        }
+        .btn-next, .btn-submit {
+            background-color: #2c6ecb;
+            border: none;
+            color: white;
+        }
+        .upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 4px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .upload-icon {
+            font-size: 30px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 复用现有导航栏 -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../../挑杯_社区管理%20(2)/挑杯_社区管理/651dc0fc5d0d19585096fc1b59c298b8.png"
+                 alt="系统图标" 
+                 class="logo-img">
+            <span class="logo-text">智慧社区</span>
+            <button class="silver-mode-btn">银发模式</button>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="community-property.html">社区物业</a></li>
+                <li><a href="community-help.html">社区互助</a></li>
+                <li><a href="supermarket-delivery.html" class="active">商超配送</a></li>
+                <li><a href="../../挑战杯网页_在线问诊(2)/挑战杯网页_在线问诊/index.html">在线问诊</a></li>
+                <li><a href="merchant-register.html" class="merchant-register">商家入驻</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-placeholder"></div>
+    </header>
+
+    <div class="register-container">
+        <h2>商家入驻申请</h2>
+        <p style="color:#666; margin:10px 0 20px;">填写以下信息完成入驻申请，我们将在3个工作日内审核</p>
+
+        <!-- 步骤导航 -->
+        <div class="step-nav">
+            <div class="step-item active">
+                1
+                <div class="step-label">基本信息</div>
+            </div>
+            <div class="step-item">
+                2
+                <div class="step-label">资质认证</div>
+            </div>
+            <div class="step-item">
+                3
+                <div class="step-label">店铺信息</div>
+            </div>
+        </div>
+
+        <!-- 步骤1：基本信息 -->
+        <div class="form-step active" id="step1">
+            <div class="form-group">
+                <label class="form-label">商家名称 <span style="color:red">*</span></label>
+                <input type="text" class="form-input" placeholder="请输入店铺全称" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">商家类型 <span style="color:red">*</span></label>
+                <select class="form-select" required>
+                    <option value="">请选择类型</option>
+                    <option value="supermarket">综合超市</option>
+                    <option value="fresh">生鲜菜场</option>
+                    <option value="convenience">便利店</option>
+                    <option value="specialty">特色食品</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">联系人姓名 <span style="color:red">*</span></label>
+                <input type="text" class="form-input" placeholder="请输入负责人姓名" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">联系电话 <span style="color:red">*</span></label>
+                <input type="tel" class="form-input" placeholder="请输入手机号码" required>
+            </div>
+            <div class="form-actions">
+                <div></div>
+                <button class="btn btn-next" data-step="1">下一步</button>
+            </div>
+        </div>
+
+        <!-- 步骤2：资质认证 -->
+        <div class="form-step" id="step2">
+            <div class="form-group">
+                <label class="form-label">营业执照照片 <span style="color:red">*</span></label>
+                <div class="upload-area">
+                    <div class="upload-icon">📂</div>
+                    <p>点击上传营业执照照片（清晰可见注册号）</p>
+                    <input type="file" style="display:none" accept="image/*">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">食品经营许可证（如适用）</label>
+                <div class="upload-area">
+                    <div class="upload-icon">📂</div>
+                    <p>点击上传许可证照片（餐饮/食品类商家必填）</p>
+                    <input type="file" style="display:none" accept="image/*">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-prev" data-step="2">上一步</button>
+                <button class="btn btn-next" data-step="2">下一步</button>
+            </div>
+        </div>
+
+        <!-- 步骤3：店铺信息 -->
+        <div class="form-step" id="step3">
+            <div class="form-group">
+                <label class="form-label">店铺地址 <span style="color:red">*</span></label>
+                <input type="text" class="form-input" placeholder="请输入详细地址（精确到门牌号）" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">配送范围（公里）<span style="color:red">*</span></label>
+                <input type="number" class="form-input" min="1" max="10" value="3" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">店铺简介</label>
+                <textarea class="form-textarea" rows="4" placeholder="请简要介绍店铺特色、主营商品等"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">店铺头像</label>
+                <div class="upload-area">
+                    <div class="upload-icon">📂</div>
+                    <p>点击上传店铺头像（建议尺寸80x80px）</p>
+                    <input type="file" style="display:none" accept="image/*">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-prev" data-step="3">上一步</button>
+                <button class="btn btn-submit">提交申请</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 步骤切换逻辑
+        const nextBtns = document.querySelectorAll('.btn-next');
+        const prevBtns = document.querySelectorAll('.btn-prev');
+        const submitBtn = document.querySelector('.btn-submit');
+        const stepItems = document.querySelectorAll('.step-item');
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const currentStep = parseInt(this.getAttribute('data-step'));
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                document.getElementById(`step${currentStep + 1}`).classList.add('active');
+                stepItems[currentStep - 1].classList.remove('active');
+                stepItems[currentStep - 1].classList.add('completed');
+                stepItems[currentStep].classList.add('active');
+            });
+        });
+
+        prevBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const currentStep = parseInt(this.getAttribute('data-step'));
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                document.getElementById(`step${currentStep - 1}`).classList.add('active');
+                stepItems[currentStep - 1].classList.remove('active');
+                stepItems[currentStep - 2].classList.remove('completed');
+                stepItems[currentStep - 2].classList.add('active');
+            });
+        });
+
+        // 提交申请
+        submitBtn.addEventListener('click', function() {
+            // 获取表单数据
+            const merchantName = document.querySelector('#step1 .form-input').value;
+            const merchantType = document.querySelector('#step1 .form-select').value;
+            
+            // 模拟表单验证
+            if (!merchantName || !merchantType) {
+                alert('请填写完整的商家信息');
+                return;
+            }
+            
+            // 模拟API提交
+            fetch('/api/merchant/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: merchantName,
+                    type: merchantType,
+                    contactPerson: document.querySelectorAll('#step1 .form-input')[2].value,
+                    contactPhone: document.querySelectorAll('#step1 .form-input')[3].value,
+                    address: document.querySelectorAll('#step3 .form-input')[0].value,
+                    deliveryRange: document.querySelectorAll('#step3 .form-input')[1].value,
+                    description: document.querySelector('#step3 .form-textarea').value
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('申请提交成功！我们将在3个工作日内通过短信通知您审核结果');
+                    
+                    // 通知父页面刷新商家列表（如果是在iframe中打开）
+                    if (window.parent && window.parent.refreshMerchantList) {
+                        window.parent.refreshMerchantList();
+                    }
+                    
+                    window.location.href = 'supermarket-delivery.html';
+                } else {
+                    alert('提交失败：' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('提交失败', error);
+                alert('提交过程中出现错误，请重试');
+            });
+        });
+
+        // 上传区域点击事件
+        const uploadAreas = document.querySelectorAll('.upload-area');
+        uploadAreas.forEach(area => {
+            area.addEventListener('click', function() {
+                this.querySelector('input[type="file"]').click();
+            });
+        });
+    </script>
+</body>
+</html>

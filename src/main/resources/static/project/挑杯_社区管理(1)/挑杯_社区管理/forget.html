@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧社区 - 找回密码</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="forget.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="brand">
+                <div class="logo">
+                    <span class="cloud-icon">☁</span>
+                    <span class="logo-text">智慧社区</span>
+                </div>
+                <div class="language-selector">
+                    <select id="language">
+                        <option value="zh-CN" selected>简体中文</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="login-title">
+                <h1>找回密码</h1>
+                <p>请输入信息完成身份验证并重置密码</p>
+            </div>
+            
+            <form id="forgetForm" class="login-form">
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span>👤</span>
+                    </div>
+                    <input type="text" id="username" placeholder="请输入登录账号" required>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span>📛</span>
+                    </div>
+                    <input type="text" id="fullname" placeholder="请输入姓名" required>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span>🔒</span>
+                    </div>
+                    <input type="password" id="newPassword" placeholder="请输入新密码" required>
+                    <button type="button" class="toggle-password" id="toggleNewPassword">👁️</button>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-icon">
+                        <span>🔄</span>
+                    </div>
+                    <input type="password" id="confirmPassword" placeholder="请确认新密码" required>
+                    <button type="button" class="toggle-password" id="toggleConfirmPassword">👁️</button>
+                </div>
+                
+                <div class="form-info" id="passwordInfo">
+                    <p>密码需包含至少8个字符，包括字母和数字</p>
+                </div>
+                
+                <!-- 按钮区域 -->
+                <div class="btn-group">
+                    <button type="submit" class="login-btn">
+                        重置密码
+                        <span class="arrow">→</span>
+                    </button>
+                    <a href="login.html" class="register-btn">返回登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="forget.js"></script>
+</body>
+</html>

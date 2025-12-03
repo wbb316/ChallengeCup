@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商超配送 - 智慧社区</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="supermarket-style.css">
+</head>
+
+<body>
+<!-- 顶部导航栏 -->
+<header class="navbar">
+    <div class="logo">
+        <img src="../../挑杯_社区管理%20(2)/挑杯_社区管理/651dc0fc5d0d19585096fc1b59c298b8.png"
+             alt="系统图标" 
+             class="logo-img">
+        <span class="logo-text">智慧社区</span>
+        <button class="silver-mode-btn">银发模式</button>
+    </div>
+
+<nav class="main-nav">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="merchant-register.html" class="merchant-register">商家入驻</a></li> 
+    </ul>
+</nav>
+
+    <div class="auth-placeholder"></div>
+</header>
+
+    <!-- 地址定位与搜索区域 -->
+    <section class="location-search-bar">
+        <div class="location-container">
+            <div class="location-icon">📍</div>
+            <div class="location-input-group">
+                <label class="location-label">收货地址</label>
+                <input type="text" class="location-input" placeholder="请输入您的详细地址" value="幸福社区2号楼3单元402">
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="搜索商品或店铺...">
+            <button class="search-btn">搜索</button>
+        </div>
+    </section>
+
+    <!-- 主内容区域 -->
+    <main class="content-wrapper">
+        <!-- 左侧商家列表 -->
+        <section class="merchant-panel">
+            <div class="panel-header">
+                <h2>附近商家</h2>
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-type="all">全部</button>
+                    <button class="filter-tag" data-type="supermarket">综合超市</button>
+                    <button class="filter-tag" data-type="fresh">生鲜菜场</button>
+                    <button class="filter-tag" data-type="convenience">便利店</button>
+                    <button class="filter-tag" data-type="specialty">特色食品</button>
+                </div>
+            </div>
+            
+            <div class="merchant-list">
+                <!-- 商家1 -->
+                <div class="merchant-card active" data-id="1" data-type="supermarket">
+                    <img src="images/merchant-super1.jpg" alt="惠民生活超市" class="merchant-img">
+                    <div class="merchant-info">
+                        <h3 class="merchant-name">惠民生活超市</h3>
+                        <div class="merchant-meta">
+                            <span class="merchant-type">综合超市</span>
+                            <span class="merchant-distance">350米</span>
+                        </div>
+                        <div class="merchant-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="score">4.2分</span>
+                        </div>
+                        <div class="delivery-info">
+                            <span class="delivery-time">25-35分钟</span>
+                            <span class="delivery-fee">配送费¥3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 商家2 -->
+                <div class="merchant-card" data-id="2" data-type="fresh">
+                    <img src="images/merchant-fresh1.jpg" alt="每日鲜菜场" class="merchant-img">
+                    <div class="merchant-info">
+                        <h3 class="merchant-name">每日鲜菜场</h3>
+                        <div class="merchant-meta">
+                            <span class="merchant-type">生鲜菜场</span>
+                            <span class="merchant-distance">500米</span>
+                        </div>
+                        <div class="merchant-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">4.8分</span>
+                        </div>
+                        <div class="delivery-info">
+                            <span class="delivery-time">20-30分钟</span>
+                            <span class="delivery-fee">满39免配送费</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 商家3 -->
+                <div class="merchant-card" data-id="3" data-type="convenience">
+                    <img src="images/merchant-conv1.jpg" alt="邻里便利店" class="merchant-img">
+                    <div class="merchant-info">
+                        <h3 class="merchant-name">邻里便利店</h3>
+                        <div class="merchant-meta">
+                            <span class="merchant-type">便利店</span>
+                            <span class="merchant-distance">150米</span>
+                        </div>
+                        <div class="merchant-rating">
+                            <span class="stars">★★★☆☆</span>
+                            <span class="score">3.7分</span>
+                        </div>
+                        <div class="delivery-info">
+                            <span class="delivery-time">10-15分钟</span>
+                            <span class="delivery-fee">配送费¥2</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 商家4 -->
+                <div class="merchant-card" data-id="4" data-type="specialty">
+                    <img src="images/merchant-spec1.jpg" alt="西域水果行" class="merchant-img">
+                    <div class="merchant-info">
+                        <h3 class="merchant-name">西域水果行</h3>
+                        <div class="merchant-meta">
+                            <span class="merchant-type">特色食品</span>
+                            <span class="merchant-distance">800米</span>
+                        </div>
+                        <div class="merchant-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">4.9分</span>
+                        </div>
+                        <div class="delivery-info">
+                            <span class="delivery-time">30-45分钟</span>
+                            <span class="delivery-fee">满59免配送费</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 右侧商品展示区 -->
+        <section class="product-panel">
+            <div class="panel-header">
+                <h2 class="current-merchant">惠民生活超市</h2>
+                <div class="sort-control">
+                    <select class="sort-select">
+                        <option value="default">默认排序</option>
+                        <option value="price-asc">价格从低到高</option>
+                        <option value="price-desc">价格从高到低</option>
+                        <option value="sales">销量优先</option>
+                        <option value="rating">评分优先</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="product-categories">
+                <button class="category-item active" data-category="all">全部商品</button>
+                <button class="category-item" data-category="vegetable">蔬菜水果</button>
+                <button class="category-item" data-category="meat">肉类水产</button>
+                <button class="category-item" data-category="grain">粮油米面</button>
+                <button class="category-item" data-category="snack">休闲零食</button>
+                <button class="category-item" data-category="daily">日用百货</button>
+            </div>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- 商品1 -->
+                <div class="product-card" data-id="p1" data-category="vegetable">
+                    <img src="images/product-apple.jpg" alt="红富士苹果" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">红富士苹果（500g）</h3>
+                        <div class="product-desc">新鲜采摘，脆甜多汁</div>
+                        <div class="product-price">
+                            <span class="price">¥9.9</span>
+                            <span class="original-price">¥12.8</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart" 
+                                data-id="p1" 
+                                data-name="红富士苹果（500g）" 
+                                data-price="9.9" 
+                                data-img="images/product-apple.jpg">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 商品2 -->
+                <div class="product-card" data-id="p2" data-category="meat">
+                    <img src="images/product-pork.jpg" alt="精选五花肉" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">精选五花肉（500g）</h3>
+                        <div class="product-desc">新鲜猪肉，肥瘦相间</div>
+                        <div class="product-price">
+                            <span class="price">¥26.8</span>
+                            <span class="original-price">¥29.8</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart" 
+                                data-id="p2" 
+                                data-name="精选五花肉（500g）" 
+                                data-price="26.8" 
+                                data-img="images/product-pork.jpg">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 商品3 -->
+                <div class="product-card" data-id="p3" data-category="daily">
+                    <img src="images/product-tissue.jpg" alt="维达卷纸" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">维达卷纸10卷装</h3>
+                        <div class="product-desc">原生木浆，柔软亲肤</div>
+                        <div class="product-price">
+                            <span class="price">¥18.9</span>
+                            <span class="original-price">¥22.5</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart" 
+                                data-id="p3" 
+                                data-name="维达卷纸10卷装" 
+                                data-price="18.9" 
+                                data-img="images/product-tissue.jpg">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 商品4 -->
+                <div class="product-card" data-id="p4" data-category="grain">
+                    <img src="images/product-rice.jpg" alt="东北大米" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">东北大米5kg</h3>
+                        <div class="product-desc">当季新米，口感香糯</div>
+                        <div class="product-price">
+                            <span class="price">¥39.9</span>
+                            <span class="original-price">¥45.0</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart" 
+                                data-id="p4" 
+                                data-name="东北大米5kg" 
+                                data-price="39.9" 
+                                data-img="images/product-rice.jpg">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 商品5 -->
+                <div class="product-card" data-id="p5" data-category="snack">
+                    <img src="images/product-chips.jpg" alt="薯片大礼包" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">薯片大礼包8包装</h3>
+                        <div class="product-desc">多种口味，休闲必备</div>
+                        <div class="product-price">
+                            <span class="price">¥29.9</span>
+                            <span class="original-price">¥36.9</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart" 
+                                data-id="p5" 
+                                data-name="薯片大礼包8包装" 
+                                data-price="29.9" 
+                                data-img="images/product-chips.jpg">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 商品6 -->
+                <div class="product-card" data-id="p6" data-category="vegetable">
+                    <img src="images/product-lettuce.jpg" alt="新鲜生菜" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">新鲜生菜（300g）</h3>
+                        <div class="product-desc">现摘现卖，清爽可口</div>
+                        <div class="product-price">
+                            <span class="price">¥3.5</span>
+                            <span class="original-price">¥4.5</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart" 
+                                data-id="p6" 
+                                data-name="新鲜生菜（300g）" 
+                                data-price="3.5" 
+                                data-img="images/product-lettuce.jpg">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 底部购物车栏 -->
+    <footer class="cart-bar">
+        <div class="cart-icon-container" id="cartToggle">
+            <div class="cart-icon">🛒</div>
+            <span class="cart-text">购物车</span>
+            <span class="cart-count" id="cartItemCount">0</span>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="total-amount">
+                合计: <span class="total-price" id="cartTotalPrice">¥0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">去结算</button>
+        </div>
+    </footer>
+    
+    <!-- 购物车弹窗 -->
+    <div class="cart-modal" id="cartModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>我的购物车</h3>
+                <button class="close-modal" id="closeModal">×</button>
+            </div>
+            
+            <div class="modal-body" id="cartItemsContainer">
+                <div class="empty-cart">
+                    <div class="empty-icon">🛒</div>
+                    <p>购物车还是空的哦</p>
+                    <p>快去添加商品吧~</p>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <div class="cart-total">
+                    总计: <span id="modalTotalPrice">¥0.00</span>
+                </div>
+                <button class="confirm-checkout" id="confirmCheckout">确认下单</button>
+                
+        
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="supermarket-script.js"></script>
+</body>
+</html>

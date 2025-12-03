@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧社区 - 商超配送</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="navbar">
+       <div class="logo">
+    <img src="../../挑杯_社区管理%20(2)/挑杯_社区管理/651dc0fc5d0d19585096fc1b59c298b8.png" alt="智慧社区" class="logo-image">
+    <span class="logo-text">邻里智联</span>
+</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../挑杯_社区管理%20(2)/挑杯_社区管理/index.html" data-page="home">首页</a ></li>
+                <li><a href="../../挑杯_社区管理%20(2)/挑杯_社区管理/community-property.html" data-page="help">社区物业</a ></li>
+                <li><a href="../../挑杯_社区管理%20(2)/挑杯_社区管理/community-help.html" data-page="property">社区互助</a ></li>
+                <li><a href="#" data-page="shopping" class="active">商超配送</a ></li>
+                <li><a href="../../挑战杯网页_在线问诊(2)/挑战杯网页_在线问诊/index.html" data-page="medical">在线问诊</a ></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <button class="btn btn-outline" id="login-btn-nav">登录</button>
+            <button class="btn btn-primary" id="register-btn-nav">注册</button>
+            <!-- 登录后显示 -->
+            <div class="user-info" style="display: none;">
+                <span id="nav-user-info">用户名</span>
+                <button class="btn btn-outline" id="logout-btn-nav">退出</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 登录页面 -->
+    <div id="login-page" class="page active">
+        <div class="login-container">
+            <h1>商超配送</h1>
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <label for="role">角色</label>
+                    <select id="role">
+                        <option value="customer">客户</option>
+                        <option value="merchant">商家</option>
+                        <option value="admin">管理员</option>
+                    </select>
+                </div>
+                <button id="login-btn" class="btn-primary">登录</button>
+            </div>
+        </div>
+    </div>
+    
+
+<!-- 客户首页 -->
+<div id="customer-home-page" class="page">
+    <header class="header">
+        <div class="location">
+            <span class="location-icon">📍</span>
+            <span>开封龙亭区</span>
+        </div>
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="搜索商品">
+        </div>
+        <div class="user-info">
+            <span id="current-user">客户用户</span>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 分类导航 -->
+        <section class="category-nav">
+            <div class="category-item active" data-category="all">
+                <div class="category-icon">🛒</div>
+                <div class="category-name">全部</div>
+            </div>
+            <div class="category-item" data-category="fresh">
+                <div class="category-icon">🍎</div>
+                <div class="category-name">生鲜水果</div>
+            </div>
+            <div class="category-item" data-category="drink">
+                <div class="category-icon">🥛</div>
+                <div class="category-name">乳饮酒水</div>
+            </div>
+            <div class="category-item" data-category="snack">
+                <div class="category-icon">🍪</div>
+                <div class="category-name">休闲零食</div>
+            </div>
+            <div class="category-item" data-category="grain">
+                <div class="category-icon">🍚</div>
+                <div class="category-name">米面粮油</div>
+            </div>
+        </section>
+
+        <!-- 轮播图 -->
+        <section class="banner">
+            <div class="banner-container">
+                <div class="banner-slide active">
+                    <div class="banner-content">新人专享优惠券</div>
+                </div>
+                <div class="banner-slide">
+                    <div class="banner-content">满99减30活动</div>
+                </div>
+                <div class="banner-slide">
+                    <div class="banner-content">生鲜水果特价</div>
+                </div>
+            </div>
+            <div class="banner-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </section>
+
+        <!-- 限时秒杀 -->
+        <section class="seckill">
+            <div class="seckill-header">
+                <h3>限时秒杀</h3>
+                <div class="countdown">
+                    <span class="countdown-text">距离结束</span>
+                    <span class="countdown-time">12:30:15</span>
+                </div>
+                <div class="more">更多 ></div>
+            </div>
+            <div class="seckill-products">
+                <div class="product-item">
+                    <div class="product-img">🍎</div>
+                    <div class="product-price">¥9.9</div>
+                    <div class="product-original-price">¥19.9</div>
+                </div>
+                <div class="product-item">
+                    <div class="product-img">🥛</div>
+                    <div class="product-price">¥12.9</div>
+                    <div class="product-original-price">¥25.9</div>
+                </div>
+                <div class="product-item">
+                    <div class="product-img">🍪</div>
+                    <div class="product-price">¥5.9</div>
+                    <div class="product-original-price">¥12.9</div>
+                </div>
+                <div class="product-item">
+                    <div class="product-img">🍚</div>
+                    <div class="product-price">¥39.9</div>
+                    <div class="product-original-price">¥59.9</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品列表 -->
+        <section class="product-list">
+            <h3 class="section-title">推荐商品</h3>
+            <div class="products-container" id="products-container">
+                <!-- 商品将通过JS动态加载 -->
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<!-- 客户购物车页面 -->
+<div id="customer-cart-page" class="page">
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="location">
+            <span class="location-icon">📍</span>
+            <span>购物车</span>
+        </div>
+        <div class="user-info">
+            <span id="current-user-cart">客户用户</span>
+            <button id="logout-btn-cart" class="btn-secondary">退出</button>
+        </div>
+    </header>
+
+    <!-- 购物车内容 -->
+    <div class="main-content">
+        <div class="cart-header">
+            <div class="cart-title">购物车</div>
+            <div class="cart-manage">管理</div>
+        </div>
+        <div class="cart-list" id="cart-list">
+            <!-- 购物车商品将通过JS动态加载 -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-select-all">
+                <input type="checkbox" id="select-all"> 全选
+            </div>
+            <div class="cart-total">
+                合计: <span class="total-price" id="total-price">¥0.00</span>
+            </div>
+            <div class="cart-settlement">去结算(<span id="selected-count">0</span>)</div>
+        </div>
+    </div>
+</div>
+
+<!-- 客户我的页面 -->
+<div id="customer-profile-page" class="page">
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="location">
+            <span class="location-icon">📍</span>
+            <span>我的</span>
+        </div>
+        <div class="user-info">
+            <span id="current-user-profile">客户用户</span>
+            <button id="logout-btn-profile" class="btn-secondary">退出</button>
+        </div>
+    </header>
+
+    <!-- 我的页面内容 -->
+    <div class="main-content">
+        <div class="profile-header">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-info">
+                <div class="profile-name">客户用户</div>
+                <div class="profile-desc">账号: customer12345</div>
+            </div>
+        </div>
+        <div class="profile-wallet">
+            <div class="wallet-item">
+                <div class="wallet-value">0</div>
+                <div class="wallet-label">优惠券</div>
+            </div>
+            <div class="wallet-item">
+                <div class="wallet-value">0</div>
+                <div class="wallet-label">红包</div>
+            </div>
+            <div class="wallet-item">
+                <div class="wallet-value">0</div>
+                <div class="wallet-label">余额</div>
+            </div>
+        </div>
+        <div class="profile-orders">
+            <div class="orders-header">
+                <div class="orders-title">我的订单</div>
+                <div class="orders-all">查看全部 ></div>
+            </div>
+            <div class="orders-grid">
+                <div class="order-item">
+                    <div class="order-icon">📦</div>
+                    <div class="order-label">待付款</div>
+                </div>
+                <div class="order-item">
+                    <div class="order-icon">🚚</div>
+                    <div class="order-label">待发货</div>
+                </div>
+                <div class="order-item">
+                    <div class="order-icon">📬</div>
+                    <div class="order-label">待收货</div>
+                </div>
+                <div class="order-item">
+                    <div class="order-icon">⭐</div>
+                    <div class="order-label">待评价</div>
+                </div>
+                <div class="order-item">
+                    <div class="order-icon">↩️</div>
+                    <div class="order-label">退款/售后</div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-menu">
+            <div class="menu-item">
+                <div class="menu-icon">📍</div>
+                <div class="menu-label">收货地址</div>
+                <div class="menu-arrow">></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">👥</div>
+                <div class="menu-label">邀请好友</div>
+                <div class="menu-arrow">></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">📞</div>
+                <div class="menu-label">客服中心</div>
+                <div class="menu-arrow">></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">⚙️</div>
+                <div class="menu-label">设置</div>
+                <div class="menu-arrow">></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- 商家首页 -->
+    <div id="merchant-home-page" class="page">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+            <div class="location">
+                <span class="location-icon">📍</span>
+                <span>商家中心</span>
+            </div>
+            <div class="user-info">
+                <span id="current-merchant">商家用户</span>
+                <button id="logout-btn-merchant" class="btn-secondary">退出</button>
+            </div>
+        </header>
+
+        <!-- 商家功能区域 -->
+        <main class="main-content">
+            <div class="merchant-actions">
+                <button id="add-product-btn" class="btn-primary">添加商品</button>
+                <button id="manage-products-btn" class="btn-secondary">管理商品</button>
+            </div>
+
+            <!-- 商品列表 -->
+            <section class="product-list">
+                <h3 class="section-title">我的商品</h3>
+                <div class="products-container" id="merchant-products-container">
+                    <!-- 商家商品将通过JS动态加载 -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 商家添加商品页面 -->
+    <div id="merchant-add-product-page" class="page">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+            <div class="location">
+                <span class="location-icon">📍</span>
+                <span>添加商品</span>
+            </div>
+            <div class="user-info">
+                <span id="current-merchant-add">商家用户</span>
+                <button id="logout-btn-merchant-add" class="btn-secondary">退出</button>
+            </div>
+        </header>
+
+        <!-- 添加商品表单 -->
+        <div class="main-content">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="product-name">商品名称</label>
+                    <input type="text" id="product-name" placeholder="请输入商品名称">
+                </div>
+                <div class="form-group">
+                    <label for="product-description">商品描述</label>
+                    <textarea id="product-description" placeholder="请输入商品描述"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">商品分类</label>
+                    <select id="product-category">
+                        <option value="fresh">生鲜水果</option>
+                        <option value="drink">乳饮酒水</option>
+                        <option value="snack">休闲零食</option>
+                        <option value="grain">米面粮油</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">商品价格</label>
+                    <input type="number" id="product-price" placeholder="请输入商品价格" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="product-original-price">原价</label>
+                    <input type="number" id="product-original-price" placeholder="请输入原价" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="product-image">商品图片</label>
+                    <input type="file" id="product-image" accept="image/*">
+                </div>
+                <button id="submit-product-btn" class="btn-primary">提交商品</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 管理员首页 -->
+    <div id="admin-home-page" class="page">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+            <div class="location">
+                <span class="location-icon">📍</span>
+                <span>管理后台</span>
+            </div>
+            <div class="user-info">
+                <span id="current-admin">管理员</span>
+                <button id="logout-btn-admin" class="btn-secondary">退出</button>
+            </div>
+        </header>
+
+        <!-- 管理员功能区域 -->
+        <main class="main-content">
+            <div class="admin-actions">
+                <button id="manage-all-products-btn" class="btn-primary">商品管理</button>
+                <button id="view-users-btn" class="btn-secondary">用户管理</button>
+            </div>
+
+            <!-- 商品列表 -->
+            <section class="product-list">
+                <h3 class="section-title">全部商品</h3>
+                <div class="products-container" id="admin-products-container">
+                    <!-- 管理员商品将通过JS动态加载 -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 底部导航栏 - 客户角色显示 -->
+    <footer id="customer-footer" class="footer">
+        <div class="footer-item active" data-page="customer-home-page">
+            <div class="footer-icon">🏠</div>
+            <div class="footer-text">首页</div>
+        </div>
+        
+            <div class="footer-item" id="community-button">
+        <div class="footer-icon">🏘️</div>
+        <div class="footer-text">附近店铺</div>
+    </div>
+         <div class="footer-item" data-page="customer-cart-page">
+            <div class="footer-icon">🛒</div>
+            <div class="footer-text">购物车</div>
+        </div>
+        <div class="footer-item" data-page="customer-profile-page">
+            <div class="footer-icon">👤</div>
+            <div class="footer-text">我的</div>
+        </div>
+       
+        
+    </footer>
+
+    <!-- 底部导航栏 - 商家角色显示 -->
+    <footer id="merchant-footer" class="footer">
+        <div class="footer-item active" data-page="merchant-home-page">
+            <div class="footer-icon">🏠</div>
+            <div class="footer-text">首页</div>
+        </div>
+        <div class="footer-item" data-page="merchant-add-product-page">
+            <div class="footer-icon">➕</div>
+            <div class="footer-text">添加商品</div>
+        </div>
+        <div class="footer-item" data-page="merchant-profile-page">
+            <div class="footer-icon">👤</div>
+            <div class="footer-text">我的</div>
+        </div>
+    </footer>
+
+    <!-- 底部导航栏 - 管理员角色显示 -->
+    <footer id="admin-footer" class="footer">
+        <div class="footer-item active" data-page="admin-home-page">
+            <div class="footer-icon">🏠</div>
+            <div class="footer-text">首页</div>
+        </div>
+        <div class="footer-item" data-page="admin-products-page">
+            <div class="footer-icon">📦</div>
+            <div class="footer-text">商品管理</div>
+        </div>
+        <div class="footer-item" data-page="admin-profile-page">
+            <div class="footer-icon">👤</div>
+            <div class="footer-text">我的</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
